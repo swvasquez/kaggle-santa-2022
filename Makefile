@@ -15,11 +15,15 @@ DATA_DIR := $(abspath data)
 
 build: conda-env data
 
-conda-env:
+conda-env: conda-env-base
+
+conda-env-base:
 	if ! { conda env list | grep ${CONDA_ENV}; } >/dev/null 2>&1; then
 		conda create -y -n ${CONDA_ENV}
 	fi
-	conda install -y -n ${CONDA_ENV} -c conda-forge python==${PYTHON_VER}
+	conda install -y -n ${CONDA_ENV} -c conda-forge \
+		python==${PYTHON_VER} \
+		jupyterlab==3.5.1
 	conda run -n ${CONDA_ENV} pip install kaggle==1.5.12
 
 data:
