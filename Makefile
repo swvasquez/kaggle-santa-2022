@@ -8,7 +8,7 @@ MAKEFLAGS += --always-make
 #################################### BUILD ####################################
 
 COMPETITION := santa-2022
-CONDA_ENV := kaggle-${CONDA_ENV}
+CONDA_ENV := kaggle-${COMPETITION}
 PYTHON_VER := 3.11.0
 
 DATA_DIR := $(abspath data)
