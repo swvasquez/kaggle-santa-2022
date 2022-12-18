@@ -24,7 +24,7 @@ conda-env:
 
 data:
 	mkdir -p ${DATA_DIR} && cd ${DATA_DIR}
-	kaggle competitions download ${COMPETITION}
+	conda run -n ${CONDA_ENV} kaggle competitions download ${COMPETITION}
 	unzip ${COMPETITION}.zip && rm -f ${COMPETITION}.zip
 
 #################################### UTILS ####################################
