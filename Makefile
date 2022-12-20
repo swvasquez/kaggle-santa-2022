@@ -24,7 +24,9 @@ conda-env-base:
 	conda install -y -n ${CONDA_ENV} -c conda-forge \
 		python==${PYTHON_VER} \
 		jupyterlab==3.5.1
-	conda run -n ${CONDA_ENV} pip install kaggle==1.5.12
+	conda run -n ${CONDA_ENV} pip install \
+		kaggle==1.5.12 \
+		numpy==1.24.0
 
 data:
 	mkdir -p ${DATA_DIR} && cd ${DATA_DIR}
