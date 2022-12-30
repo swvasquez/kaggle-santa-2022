@@ -1,0 +1,8 @@
+{
+    "timeout": [1],
+    "min_loop_size": [7],
+    "max_steps": [250],
+    "max_degree": [8],
+    "threshold":  [400],
+    "seed": [3]
+}
