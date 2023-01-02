@@ -1,4 +1,5 @@
 import itertools
+import random
 from collections import defaultdict
 
 import numpy as np
@@ -26,6 +27,23 @@ def start_cfg(n_links):
             cfg[2*idx] = -length
 
     return tuple(cfg)
+
+
+def distances(nbhd, cfg):
+    return np.linalg.norm(nbhd - cfg, axis=1)
+
+
+def random_cfg(n_links):
+    lengths = links(n_links)
+    out = []
+    for l in lengths:
+        link = [0,0]
+        max_pos = random.randint(0,1)
+        link[max_pos] = random.choice([-l, l])
+        link[(max_pos + 1) % 2] = random.randint(-l, l)
+        out += link
+
+    return np.array(out, dtype=np.byte)
 
 
 def locations(cfg, origin=np.array((0,0))):
