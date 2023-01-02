@@ -53,6 +53,13 @@ grid-search:
 		--output-dir ${OUTPUT_DIR} \
 		--sweep ${SWEEP} ${FLAGS}
 
+pbt:
+	python -u src/pbt.py \
+		--n-links ${N_LINKS} \
+		--src-path ${DATA_DIR}/image.png \
+		--output-dir ${OUTPUT_DIR} \
+		--sweep ${SWEEP} ${FLAGS}
+
 #################################### UTILS ####################################
 
 test:
